@@ -1,6 +1,6 @@
 import setuptools
 
-with open('README.md', 'r', encoding='utf-8') as fh:
+with open('/usr/local/Lingam-1/lingam-1/README.md', 'r', encoding='utf-8') as fh:
     README = fh.read()
 
 import lingam
