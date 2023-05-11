@@ -1,5 +1,6 @@
 # Dockerfileについて
-Seki-Labのlingam-1プロジェクトをクローンする.
+Seki-Labのlingam-1プロジェクトをクローンする.  
+※現在dockerfileにFROMが2つある問題が発生している．マルチステージビルドを行う必要がある．  
 
 ## dockerの環境
 ubuntu 22.04
