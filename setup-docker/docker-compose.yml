@@ -1,0 +1,10 @@
+version: '3'
+services:
+  python3:
+    restart: always
+    build: .
+    container_name: 'lingam-1'
+    working_dir: '/usr/local/'
+    tty: true
+    volumes:
+      - ./opt:/root/opt
