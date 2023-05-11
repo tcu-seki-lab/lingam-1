@@ -28,13 +28,11 @@ git 2.34.1
 $ ls -a
 # カレントディレクトリに.ssh/  Dockerfile <--この二つのファイルがあればok
 
-# Dockerファイルからイメージ作成
-# $ docker build -t イメージ名 . 
-docker build -t lingam-1 .  
+# Docker-composeからイメージ作成 
+docker compose up -d --build 
 
-# Dockerコンテナの作成
-# docker run -it --name コンテナ名 イメージ名
-docker run -it --name lingam-1-container lingam-1
+# Dockerコンテナの作成 今回はdockerfileでpythonを使ったついでに実行コマンドをpythonにしただけ．
+docker compose exec python3 bash
 
 ```
 
