@@ -17,8 +17,8 @@ git 2.34.1
 4. コンテナイメージの作成
 5. コンテナの作成
 
-1~3は別資料で説明
-[1〜3はこちらから参照](https://github.com/tcu-seki-lab/docker-info/blob/main/docker-connected-github/info.md)
+1~3は別資料で説明  
+[1〜3はこちらから参照](https://github.com/tcu-seki-lab/docker-info/blob/main/docker-connected-github/info.md)  
 4,5のみを行えば可能
 ```sh
 # cmd or terminal
