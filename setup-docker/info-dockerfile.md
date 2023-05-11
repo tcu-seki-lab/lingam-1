@@ -39,7 +39,9 @@ docker run -it --name lingam-1-container lingam-1
 ```
 
 
-`RUN git clone git@github.com:tcu-seki-lab/lingam-1.git`の部分でクローンはできるが`.git`がない場合がある．
+## その他
+
+`RUN git clone git@github.com:tcu-seki-lab/lingam-1.git`の部分でクローンはできるが`.git`が無い場合がある．
 そのときは以下の手順を踏む  
 
 ```sh
