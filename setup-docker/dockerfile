@@ -1,7 +1,12 @@
-FROM ubuntu
-
-RUN apt-get update -y
+# stage1 : ベースイメージでubuntuを使用．
+FROM ubuntu as base
+RUN apt-get update && apt-get install -y python3
 RUN apt-get install -y git
+
+# Stage2: Stage 1からのイメージを継承し、Pythonアプリケーションを追加する．
+FROM base as python-app
+
+
 
 # sshキーの追加
 ADD .ssh /root/.ssh
