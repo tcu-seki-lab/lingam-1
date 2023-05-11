@@ -112,3 +112,6 @@ venv.bak/
 # docker
 Dockerfile
 .devcontainer/
+
+# ssh-key
+.ssh
