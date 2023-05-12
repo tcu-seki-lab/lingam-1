@@ -1,15 +1,15 @@
 # stage1 : ベースイメージでubuntuを使用．
 FROM ubuntu as base
-RUN apt-get update && apt-get install -y python3.9.0
+RUN apt-get update && apt-get install -y python 3.9.0
 RUN apt-get install -y git
 
 # Stage2: Stage 1からのイメージを継承し、Pythonアプリケーションを追加する．
-FROM base as python3.9.0
+FROM python
 
 USER root
 
-RUN apt-get -y install locales && \
-    localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
+#RUN apt-get -y install locales && \
+    #localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:ja
 ENV LC_ALL ja_JP.UTF-8
@@ -27,7 +27,7 @@ RUN git clone git@github.com:tcu-seki-lab/lingam-1.git
 # Gitのインストール
 RUN apt-get install -y git
 
-RUN apt-get install -y vim less
+# RUN apt-get install -y vim less
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN python -m pip install lingam
@@ -51,5 +51,4 @@ RUN git clone git@github.com:tcu-seki-lab/lingam-1.git
 
 COPY requirements.txt /usr/local/Lingam-1/
 COPY . /usr/local/Lingam-1/
-
 
