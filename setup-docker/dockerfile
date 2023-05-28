@@ -1,0 +1,53 @@
+# stage1 : ベースイメージでubuntuを使用．
+FROM ubuntu as base
+RUN apt-get update && apt-get install -y python 3.9.0
+RUN apt-get install -y git
+
+# Stage2: Stage 1からのイメージを継承し、Pythonアプリケーションを追加する．
+FROM python
+
+USER root
+
+#RUN apt-get -y install locales && \
+    #localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
+ENV LANG ja_JP.UTF-8
+ENV LANGUAGE ja_JP:ja
+ENV LC_ALL ja_JP.UTF-8
+ENV TZ JST-9
+ENV TERM xterm
+
+
+# sshキーの追加
+ADD .ssh /root/.ssh
+RUN chmod 600 /root/.ssh/*
+
+WORKDIR /usr/local/Lingam/
+RUN git clone git@github.com:tcu-seki-lab/lingam-1.git
+
+# Gitのインストール
+RUN apt-get install -y git
+
+# RUN apt-get install -y vim less
+RUN pip install --upgrade pip
+RUN pip install --upgrade setuptools
+RUN python -m pip install lingam
+RUN python -m pip install jupyterlab
+RUN python -m pip install numpy
+RUN python -m pip install scipy
+RUN python -m pip install scikit-learn
+#RUN python -m pip install graphvis
+RUN python -m pip install statsmodels
+RUN python -m pip install python-igraph
+RUN python -m pip install networkx
+RUN python -m pip install pandas
+#RUN python -m pip install itertools
+RUN python -m pip install factor_analyzer
+
+# sshキーの追加
+ADD .ssh /root/.ssh
+RUN chmod 600 /root/.ssh/*
+WORKDIR /usr/local/Lingam-1/
+RUN git clone git@github.com:tcu-seki-lab/lingam-1.git
+
+COPY . /usr/local/Lingam-1/
+
