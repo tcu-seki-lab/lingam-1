@@ -114,4 +114,4 @@ venv.bak/
 # .devcontainer/
 
 # ssh-key
-.ssh
+*.ssh
