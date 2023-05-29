@@ -1,0 +1,18 @@
+digraph {
+	var0
+	var1
+	var2
+	var3
+	var4
+	var5
+	var3 -> var0 [label=3.01]
+	var0 -> var1 [label=3.00]
+	var2 -> var1 [label=2.00]
+	var3 -> var2 [label=6.00]
+	var0 -> var4 [label=7.99]
+	var2 -> var4 [label=-1.00]
+	var0 -> var5 [label=4.00]
+	{
+		rank=same
+	}
+}
