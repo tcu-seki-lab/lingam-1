@@ -110,8 +110,8 @@ venv.bak/
 *.swp
 
 # docker
-Dockerfile
-.devcontainer/
+# Dockerfile
+# .devcontainer/
 
 # ssh-key
 .ssh
